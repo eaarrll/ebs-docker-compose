@@ -1,0 +1,9 @@
+# Replaces the default Jenkins slave
+jenkins-slave:
+  image: jembim/adop-accelerator-slave:0.1 
+  environment:
+    SLAVE_EXECUTORS: "10"
+    SLAVE_NAME: "Postgres_Rice"
+    SLAVE_LABELS: "java ldap docker svn postgres"
+    LDAP_DOMAIN: "${LDAP_DOMAIN}"
+    SWARM_PASSWORD: "${PASSWORD_JENKINS}"

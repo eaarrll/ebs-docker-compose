@@ -1,0 +1,43 @@
+# set LOGSTASH_HOST to dns/ip of logstash host
+
+proxy:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "udp://${LOGSTASH_HOST}:25826"
+    tag: "proxy"
+
+ldap:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "udp://${LOGSTASH_HOST}:25826"
+    tag: "ldap"
+
+sonar-mysql:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "udp://${LOGSTASH_HOST}:25826"
+    tag: "sonar-mysql"
+
+sonar:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "udp://${LOGSTASH_HOST}:25826"
+    tag: "sonar"
+
+jenkins:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "udp://${LOGSTASH_HOST}:25826"
+    tag: "jenkins"
+    
+jenkins-slave:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "udp://${LOGSTASH_HOST}:25826"
+    tag: "jenkins-slave"
+
+nexus:
+  log_driver: "syslog"
+  log_opt:
+    syslog-address: "udp://${LOGSTASH_HOST}:25826"
+    tag: "nexus"
