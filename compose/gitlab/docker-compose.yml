@@ -34,7 +34,7 @@ erp-manager-db:
     - pgsql_data:/var/lib/pgsql/data/pgdata
 
 proxy:
-  image: jembim/opc-accelerator-nginx:0.1
+  image: jembim/opc-accelerator-nginx:0.2
   environment:
     GIT_REPO: "gitlab"
 
