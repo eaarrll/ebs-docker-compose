@@ -4,7 +4,7 @@
 proxy:
   container_name: proxy
   restart: always
-  image: nginx-test
+  image: accenture/adop-nginx
   #build: ../images/docker-nginx/
   net: ${CUSTOM_NETWORK_NAME}
   ports:

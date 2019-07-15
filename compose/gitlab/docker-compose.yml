@@ -9,29 +9,29 @@ jenkins:
     GITLAB_JENKINS_PASSWORD: ${PASSWORD_JENKINS}
     GITLAB_ROOT_PASSWORD: ${PASSWORD_GITLAB}
 
-erp-manager:
-  container_name: erp-manager
-  image: dockerhub.accenture.com/adop-afpo/oracle-erp-manager
-  net: ${CUSTOM_NETWORK_NAME}
-  links:
-    - erp-manager-db
-  restart: always
-  expose:
-    - "8090"
+# erp-manager:
+#   container_name: erp-manager
+#   image: dockerhub.accenture.com/adop-afpo/oracle-erp-manager
+#   net: ${CUSTOM_NETWORK_NAME}
+#   links:
+#     - erp-manager-db
+#   restart: always
+#   expose:
+#     - "8090"
 
-erp-manager-db:
-  container_name: ricewmanager.local
-  image: dockerhub.accenture.com/adop-afpo/oracle-erp-postgres
-  net: ${CUSTOM_NETWORK_NAME}
-  restart: always
-  environment:
-    PGDATA: "/var/lib/pgsql/data/pgdata"
-    POSTRES_USER: "postgres"
-    POSTGRES_PASSWORD: "${PASSWORD_SQL}"
-  ports:
-    - "5432:5432"
-  volumes:
-    - pgsql_data:/var/lib/pgsql/data/pgdata
+# erp-manager-db:
+#   container_name: ricewmanager.local
+#   image: dockerhub.accenture.com/adop-afpo/oracle-erp-postgres
+#   net: ${CUSTOM_NETWORK_NAME}
+#   restart: always
+#   environment:
+#     PGDATA: "/var/lib/pgsql/data/pgdata"
+#     POSTRES_USER: "postgres"
+#     POSTGRES_PASSWORD: "${PASSWORD_SQL}"
+#   ports:
+#     - "5432:5432"
+#   volumes:
+#     - pgsql_data:/var/lib/pgsql/data/pgdata
 
 proxy:
   image: jembim/opc-accelerator-nginx:0.3
